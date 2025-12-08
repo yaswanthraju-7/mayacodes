@@ -1,11 +1,32 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 int main()
-{
-	int marks[6]={89,90,76,78,98,86};
-	printf("%d \n",marks[0]);
-	printf("%d \n",marks[1]);
-	printf("%d \n",marks[2]);
-	printf("%d \n",marks[3]);
-	printf("%d \n",marks[4]);
-	printf("%d \n",marks[5]);
+ {
+    int n;
+    scanf("%d", &n);
+
+    
+    int *arr = (int*)malloc(n * sizeof(int));
+    if (arr == NULL) 
+    {
+        return 1;
+    }
+
+    long long sum = 0;
+    for (int i = 0; i < n; i++)
+     {
+        
+        if (scanf("%d", &arr[i]) != 1)
+     {
+            free(arr);
+            return 1;
+     }
+        sum += arr[i];
+    }
+  printf("%lld\n", sum);
+    free(arr);
+    return 0;
 }
+
+    
+    
